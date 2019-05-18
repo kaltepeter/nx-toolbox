@@ -19,6 +19,9 @@
     },
     "apm-node-sensor": {
       "tags": []
+    },
+    "log": {
+      "tags": []
     }
   }
 }
