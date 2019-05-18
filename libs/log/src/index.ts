@@ -1,1 +1,1 @@
-export {initializeLogger} from './lib/log.service';
+export {getLogger} from './lib/log.service';
