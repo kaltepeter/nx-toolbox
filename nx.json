@@ -17,10 +17,10 @@
     "websocket-notifications": {
       "tags": []
     },
-    "apm-node-sensor": {
+    "log": {
       "tags": []
     },
-    "log": {
+    "apm": {
       "tags": []
     }
   }

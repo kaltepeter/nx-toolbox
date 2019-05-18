@@ -16,7 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@ka/apm/node-sensor": ["libs/apm/node-sensor/src/index.ts"],
-      "@ka/log": ["libs/log/src/index.ts"]
+      "@ka/log": ["libs/log/src/index.ts"],
+      "@ka/apm": ["libs/apm/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -177,43 +177,6 @@
         }
       }
     },
-    "apm-node-sensor": {
-      "root": "libs/apm/node-sensor",
-      "sourceRoot": "libs/apm/node-sensor/src",
-      "projectType": "library",
-      "prefix": "apm",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
-          "options": {
-            "tsConfig": "libs/apm/node-sensor/tsconfig.lib.json",
-            "project": "libs/apm/node-sensor/ng-package.json"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/apm/node-sensor/tsconfig.lib.json",
-              "libs/apm/node-sensor/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/builders:jest",
-          "options": {
-            "jestConfig": "libs/apm/node-sensor/jest.config.js",
-            "tsConfig": "libs/apm/node-sensor/tsconfig.spec.json"
-          }
-        }
-      },
-      "schematics": {
-        "@nrwl/schematics:component": {
-          "styleext": "scss"
-        }
-      }
-    },
     "log": {
       "root": "libs/log",
       "sourceRoot": "libs/log/src",
@@ -242,6 +205,43 @@
           "options": {
             "jestConfig": "libs/log/jest.config.js",
             "tsConfig": "libs/log/tsconfig.spec.json"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "apm": {
+      "root": "libs/apm",
+      "sourceRoot": "libs/apm/src",
+      "projectType": "library",
+      "prefix": "apm",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "libs/apm/tsconfig.lib.json",
+            "project": "libs/apm/ng-package.json"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/apm/tsconfig.lib.json",
+              "libs/apm/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "libs/apm/jest.config.js",
+            "tsConfig": "libs/apm/tsconfig.spec.json"
           }
         }
       },
