@@ -13,6 +13,9 @@
     },
     "change-detector-e2e": {
       "tags": []
+    },
+    "websocket-notifications": {
+      "tags": []
     }
   }
 }

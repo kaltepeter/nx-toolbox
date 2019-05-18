@@ -26,7 +26,9 @@
               "apps/change-detector/src/favicon.ico",
               "apps/change-detector/src/assets"
             ],
-            "styles": ["apps/change-detector/src/styles.scss"],
+            "styles": [
+              "apps/change-detector/src/styles.scss"
+            ],
             "scripts": [],
             "es5BrowserSupport": true
           },
@@ -60,7 +62,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "change-detector:build"
+            "browserTarget": "change-detector:build",
+            "proxyConfig": "apps/change-detector//proxy.conf.json"
           },
           "configurations": {
             "production": {
@@ -81,7 +84,9 @@
               "apps/change-detector/tsconfig.app.json",
               "apps/change-detector/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         },
         "test": {
@@ -116,7 +121,68 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "apps/change-detector-e2e/tsconfig.e2e.json",
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "websocket-notifications": {
+      "root": "apps/websocket-notifications",
+      "sourceRoot": "apps/websocket-notifications/src",
+      "projectType": "application",
+      "prefix": "websocket-notifications",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/builders:node-build",
+          "options": {
+            "outputPath": "dist/apps/websocket-notifications",
+            "main": "apps/websocket-notifications/src/main.ts",
+            "tsConfig": "apps/websocket-notifications/tsconfig.app.json",
+            "assets": [
+              "apps/websocket-notifications/src/assets"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/websocket-notifications/src/environments/environment.ts",
+                  "with": "apps/websocket-notifications/src/environments/environment.prod.ts"
+                }
+              ],
+              "externalDependencies": "none"
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/builders:node-execute",
+          "options": {
+            "buildTarget": "websocket-notifications:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/websocket-notifications/tsconfig.app.json",
+              "apps/websocket-notifications/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "apps/websocket-notifications/jest.config.js",
+            "tsConfig": "apps/websocket-notifications/tsconfig.spec.json"
           }
         }
       }
