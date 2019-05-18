@@ -26,9 +26,7 @@
               "apps/change-detector/src/favicon.ico",
               "apps/change-detector/src/assets"
             ],
-            "styles": [
-              "apps/change-detector/src/styles.scss"
-            ],
+            "styles": ["apps/change-detector/src/styles.scss"],
             "scripts": [],
             "es5BrowserSupport": true
           },
@@ -84,9 +82,7 @@
               "apps/change-detector/tsconfig.app.json",
               "apps/change-detector/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "test": {
@@ -121,9 +117,7 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "apps/change-detector-e2e/tsconfig.e2e.json",
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -141,9 +135,7 @@
             "outputPath": "dist/apps/websocket-notifications",
             "main": "apps/websocket-notifications/src/main.ts",
             "tsConfig": "apps/websocket-notifications/tsconfig.app.json",
-            "assets": [
-              "apps/websocket-notifications/src/assets"
-            ]
+            "assets": ["apps/websocket-notifications/src/assets"]
           },
           "configurations": {
             "production": {
@@ -173,9 +165,7 @@
               "apps/websocket-notifications/tsconfig.app.json",
               "apps/websocket-notifications/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "test": {
@@ -184,6 +174,43 @@
             "jestConfig": "apps/websocket-notifications/jest.config.js",
             "tsConfig": "apps/websocket-notifications/tsconfig.spec.json"
           }
+        }
+      }
+    },
+    "apm-node-sensor": {
+      "root": "libs/apm/node-sensor",
+      "sourceRoot": "libs/apm/node-sensor/src",
+      "projectType": "library",
+      "prefix": "apm",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "libs/apm/node-sensor/tsconfig.lib.json",
+            "project": "libs/apm/node-sensor/ng-package.json"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/apm/node-sensor/tsconfig.lib.json",
+              "libs/apm/node-sensor/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "libs/apm/node-sensor/jest.config.js",
+            "tsConfig": "libs/apm/node-sensor/tsconfig.spec.json"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
         }
       }
     }

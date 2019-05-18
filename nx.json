@@ -16,6 +16,9 @@
     },
     "websocket-notifications": {
       "tags": []
+    },
+    "apm-node-sensor": {
+      "tags": []
     }
   }
 }
