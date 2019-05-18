@@ -7,5 +7,12 @@
     "tslint.json": "*",
     "nx.json": "*"
   },
-  "projects": {}
+  "projects": {
+    "change-detector": {
+      "tags": []
+    },
+    "change-detector-e2e": {
+      "tags": []
+    }
+  }
 }

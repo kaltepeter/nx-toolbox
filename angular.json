@@ -2,7 +2,126 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "",
-  "projects": {},
+  "projects": {
+    "change-detector": {
+      "root": "apps/change-detector/",
+      "sourceRoot": "apps/change-detector/src",
+      "projectType": "application",
+      "prefix": "cd",
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "style": "scss"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/change-detector",
+            "index": "apps/change-detector/src/index.html",
+            "main": "apps/change-detector/src/main.ts",
+            "polyfills": "apps/change-detector/src/polyfills.ts",
+            "tsConfig": "apps/change-detector/tsconfig.app.json",
+            "assets": [
+              "apps/change-detector/src/favicon.ico",
+              "apps/change-detector/src/assets"
+            ],
+            "styles": ["apps/change-detector/src/styles.scss"],
+            "scripts": [],
+            "es5BrowserSupport": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/change-detector/src/environments/environment.ts",
+                  "with": "apps/change-detector/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "change-detector:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "change-detector:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "change-detector:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/change-detector/tsconfig.app.json",
+              "apps/change-detector/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "apps/change-detector/jest.config.js",
+            "tsConfig": "apps/change-detector/tsconfig.spec.json",
+            "setupFile": "apps/change-detector/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "change-detector-e2e": {
+      "root": "apps/change-detector-e2e",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/builders:cypress",
+          "options": {
+            "cypressConfig": "apps/change-detector-e2e/cypress.json",
+            "tsConfig": "apps/change-detector-e2e/tsconfig.e2e.json",
+            "devServerTarget": "change-detector:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "change-detector:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/change-detector-e2e/tsconfig.e2e.json",
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    }
+  },
   "cli": {
     "warnings": {
       "typescriptMismatch": false,
@@ -17,5 +136,6 @@
     "@nrwl/schematics:library": {
       "style": "scss"
     }
-  }
+  },
+  "defaultProject": "change-detector"
 }
