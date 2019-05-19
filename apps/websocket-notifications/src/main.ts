@@ -15,9 +15,9 @@ const app = express();
 app.get('/api', (req, res) => {
   logger.debug('/api called with: ', req);
   const randomNum = Math.floor(Math.random() * 100);
-  logger.info(`Random number is: ${randomNum}`);
+  logger.warn(`Random number is: ${randomNum}`);
   if (randomNum % 2 === 0) {
-    logger.info('should fail');
+    logger.error('should fail');
     throw new Error(`Random failure: ${randomNum}`);
   }
   res.send({message: `Welcome to websocket-notifications! ${randomNum}`});
