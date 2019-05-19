@@ -26,7 +26,10 @@
               "apps/change-detector/src/favicon.ico",
               "apps/change-detector/src/assets"
             ],
-            "styles": ["apps/change-detector/src/styles.scss"],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
+              "apps/change-detector/src/styles.scss"
+            ],
             "scripts": [],
             "es5BrowserSupport": true
           },
@@ -82,7 +85,9 @@
               "apps/change-detector/tsconfig.app.json",
               "apps/change-detector/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         },
         "test": {
@@ -117,7 +122,9 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "apps/change-detector-e2e/tsconfig.e2e.json",
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         }
       }
@@ -135,7 +142,9 @@
             "outputPath": "dist/apps/websocket-notifications",
             "main": "apps/websocket-notifications/src/main.ts",
             "tsConfig": "apps/websocket-notifications/tsconfig.app.json",
-            "assets": ["apps/websocket-notifications/src/assets"]
+            "assets": [
+              "apps/websocket-notifications/src/assets"
+            ]
           },
           "configurations": {
             "production": {
@@ -165,7 +174,9 @@
               "apps/websocket-notifications/tsconfig.app.json",
               "apps/websocket-notifications/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         },
         "test": {
@@ -197,7 +208,9 @@
               "libs/log/tsconfig.lib.json",
               "libs/log/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         },
         "test": {
@@ -234,7 +247,9 @@
               "libs/apm/tsconfig.lib.json",
               "libs/apm/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         },
         "test": {
@@ -264,7 +279,9 @@
               "libs/change-detector/shell/tsconfig.lib.json",
               "libs/change-detector/shell/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         },
         "test": {
