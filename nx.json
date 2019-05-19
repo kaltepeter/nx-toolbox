@@ -22,6 +22,9 @@
     },
     "apm": {
       "tags": []
+    },
+    "change-detector-shell": {
+      "tags": ["scope:change-detector", "type:feature"]
     }
   }
 }
