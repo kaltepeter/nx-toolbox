@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { NavigationComponent } from './navigation/navigation.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
+import { ShellComponent } from './shell.component';
 
 @NgModule({
   imports: [
@@ -25,7 +26,8 @@ import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, Mat
 
     MatListModule
   ],
-  declarations: [NavigationComponent],
-  entryComponents: [NavigationComponent]
+  declarations: [NavigationComponent, ShellComponent],
+  entryComponents: [ShellComponent],
+  exports: [ShellComponent]
 })
 export class ChangeDetectorShellModule {}
