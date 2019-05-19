@@ -9,10 +9,10 @@
   },
   "projects": {
     "change-detector": {
-      "tags": []
+      "tags": ["scope:change-detector", "type:app"]
     },
     "change-detector-e2e": {
-      "tags": []
+      "tags": ["scope:change-detector", "type:test"]
     },
     "websocket-notifications": {
       "tags": []
