@@ -12,8 +12,9 @@ import {CommonUiModule} from '@ka/common/ui';
   imports: [
     CommonModule,
 
-    RouterModule.forChild([
-      /* {path: '', pathMatch: 'full', component: InsertYourComponentHere} */
+    RouterModule.forRoot([
+      {path: 'rxjs', component: ColorGridComponent},
+      {path: '', pathMatch: 'full', redirectTo: '/rxjs'}
     ]),
 
     LayoutModule,

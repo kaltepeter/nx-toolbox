@@ -26,16 +26,10 @@ export class ColorGridComponent implements OnInit {
   }
 
   constructor() {
-    this.setColors();
+    this.changeColors();
   }
 
   ngOnInit() {
-    // interval(500)
-    //   .pipe(map(i => i))
-    //   .subscribe(console.log);
-    // setInterval(() => {
-    //   this.setColors();
-    // }, 500);
 
     setInterval(() => {
       this.colorBlocks$ = range(1, 2000).pipe(
@@ -51,24 +45,11 @@ export class ColorGridComponent implements OnInit {
         ),
         scan<ColorBlock>((acc, curr) => [...acc, curr], [])
       );
-      this.setColors();
+      this.changeColors();
     }, 1000);
   }
 
-  setColors() {
-    // let blocks = [];
-    // for (let i = 0; i < 2000; i++) {
-    //   blocks.push({
-    //     color: Color.rgb(
-    //       this.currentColor,
-    //       this.currentColor,
-    //       this.currentColor
-    //     )
-    //   });
-    // }
-    // this.colorBlocks$ = new Observable<ColorBlock[]>(observer =>
-    //   observer.next([...blocks])
-    // );
+  changeColors() {
     this.currentColor += 20;
   }
 }
