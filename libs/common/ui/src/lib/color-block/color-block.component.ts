@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import * as Color from 'color';
 
 @Component({
   selector: 'ui-color-block',
@@ -6,10 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./color-block.component.scss']
 })
 export class ColorBlockComponent implements OnInit {
+  @Input() color: Color = Color.rgb(255, 255, 255);
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }
