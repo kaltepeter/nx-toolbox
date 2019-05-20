@@ -6,6 +6,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 import { ShellComponent } from './shell.component';
 import { ColorGridComponent } from './color-grid/color-grid.component';
+import {CommonUiModule} from '@ka/common/ui';
 
 @NgModule({
   imports: [
@@ -25,7 +26,8 @@ import { ColorGridComponent } from './color-grid/color-grid.component';
 
     MatIconModule,
 
-    MatListModule
+    MatListModule,
+    CommonUiModule
   ],
   declarations: [NavigationComponent, ShellComponent, ColorGridComponent],
   entryComponents: [ShellComponent],

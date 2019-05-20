@@ -1,3 +1,5 @@
-<p>
-  color-grid works!
-</p>
+<ul>
+  <li *ngFor="let colorBlock of colorBlocks$ | async">
+    <ui-color-block [color]="colorBlock.color"></ui-color-block>
+  </li>
+</ul>
