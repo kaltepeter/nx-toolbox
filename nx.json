@@ -25,6 +25,9 @@
     },
     "change-detector-shell": {
       "tags": ["scope:change-detector", "type:feature"]
+    },
+    "common-ui": {
+      "tags": ["scope:common", "type:ui"]
     }
   }
 }

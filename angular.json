@@ -85,9 +85,7 @@
               "apps/change-detector/tsconfig.app.json",
               "apps/change-detector/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "test": {
@@ -122,9 +120,7 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "apps/change-detector-e2e/tsconfig.e2e.json",
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -142,9 +138,7 @@
             "outputPath": "dist/apps/websocket-notifications",
             "main": "apps/websocket-notifications/src/main.ts",
             "tsConfig": "apps/websocket-notifications/tsconfig.app.json",
-            "assets": [
-              "apps/websocket-notifications/src/assets"
-            ]
+            "assets": ["apps/websocket-notifications/src/assets"]
           },
           "configurations": {
             "production": {
@@ -174,9 +168,7 @@
               "apps/websocket-notifications/tsconfig.app.json",
               "apps/websocket-notifications/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "test": {
@@ -208,9 +200,7 @@
               "libs/log/tsconfig.lib.json",
               "libs/log/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "test": {
@@ -247,9 +237,7 @@
               "libs/apm/tsconfig.lib.json",
               "libs/apm/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "test": {
@@ -279,9 +267,7 @@
               "libs/change-detector/shell/tsconfig.lib.json",
               "libs/change-detector/shell/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "test": {
@@ -290,6 +276,44 @@
             "jestConfig": "libs/change-detector/shell/jest.config.js",
             "tsConfig": "libs/change-detector/shell/tsconfig.spec.json",
             "setupFile": "libs/change-detector/shell/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "common-ui": {
+      "root": "libs/common/ui",
+      "sourceRoot": "libs/common/ui/src",
+      "projectType": "library",
+      "prefix": "ka",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "libs/common/ui/tsconfig.lib.json",
+            "project": "libs/common/ui/ng-package.json"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/common/ui/tsconfig.lib.json",
+              "libs/common/ui/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "libs/common/ui/jest.config.js",
+            "tsConfig": "libs/common/ui/tsconfig.spec.json",
+            "setupFile": "libs/common/ui/src/test-setup.ts"
           }
         }
       },
