@@ -28,6 +28,9 @@
     },
     "common-ui": {
       "tags": ["scope:common", "type:ui"]
+    },
+    "shared": {
+      "tags": ["scope:shared", "type:feature"]
     }
   }
 }

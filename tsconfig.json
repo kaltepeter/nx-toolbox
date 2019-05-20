@@ -19,7 +19,8 @@
       "@ka/log": ["libs/log/src/index.ts"],
       "@ka/apm": ["libs/apm/src/index.ts"],
       "@ka/change-detector/shell": ["libs/change-detector/shell/src/index.ts"],
-      "@ka/common/ui": ["libs/common/ui/src/index.ts"]
+      "@ka/common/ui": ["libs/common/ui/src/index.ts"],
+      "@ka/shared": ["libs/shared/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
