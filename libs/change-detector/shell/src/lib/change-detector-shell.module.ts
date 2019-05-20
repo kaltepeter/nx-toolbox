@@ -5,6 +5,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 import { ShellComponent } from './shell.component';
+import { ColorGridComponent } from './color-grid/color-grid.component';
 
 @NgModule({
   imports: [
@@ -26,7 +27,7 @@ import { ShellComponent } from './shell.component';
 
     MatListModule
   ],
-  declarations: [NavigationComponent, ShellComponent],
+  declarations: [NavigationComponent, ShellComponent, ColorGridComponent],
   entryComponents: [ShellComponent],
   exports: [ShellComponent]
 })
