@@ -30,3 +30,5 @@ app.listen(port, (err) => {
   }
   console.log(`Listening at http://localhost:${port}`);
 });
+
+export default app;

@@ -8,8 +8,12 @@ import {
   MatSidenavModule,
   MatToolbarModule,
 } from '@angular/material';
-
 import { NavigationComponent } from './navigation.component';
+import { Component } from '@angular/core';
+
+// tslint:disable-next-line: component-selector
+@Component({selector: 'router-outlet', template: ''})
+class RouterOutletStubComponent { }
 
 describe('NavigationComponent', () => {
   let component: NavigationComponent;
@@ -17,7 +21,10 @@ describe('NavigationComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [NavigationComponent],
+      declarations: [
+        NavigationComponent,
+        RouterOutletStubComponent
+      ],
       imports: [
         NoopAnimationsModule,
         LayoutModule,

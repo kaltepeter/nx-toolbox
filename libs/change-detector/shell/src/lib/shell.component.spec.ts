@@ -1,6 +1,14 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ShellComponent } from './shell.component';
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'cd-nav',
+  template: ``
+})
+class MockNavigationComponent {
+}
 
 describe('ShellComponent', () => {
   let component: ShellComponent;
@@ -8,7 +16,7 @@ describe('ShellComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ShellComponent ]
+      declarations: [ ShellComponent, MockNavigationComponent ]
     })
     .compileComponents();
   }));
@@ -21,5 +29,10 @@ describe('ShellComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should contain nav component', () => {
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('cd-nav')).toBeTruthy();
   });
 });

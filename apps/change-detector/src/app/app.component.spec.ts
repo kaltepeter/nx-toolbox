@@ -1,10 +1,17 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'cd-app-shell',
+  template: ``
+})
+class MockAppShell {}
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [AppComponent]
+      declarations: [AppComponent, MockAppShell]
     }).compileComponents();
   }));
 
@@ -20,12 +27,10 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('change-detector');
   });
 
-  it('should render title in a h1 tag', () => {
+  it('should render app shell', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain(
-      'Welcome to change-detector!'
-    );
+    expect(compiled.querySelector('cd-app-shell')).toBeTruthy();
   });
 });
