@@ -45,6 +45,7 @@
     "hammerjs": "^2.0.8",
     "rxjs": "6.3.3",
     "winston": "^3.2.1",
+    "winston-splunk-httplogger": "^2.0.0",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
